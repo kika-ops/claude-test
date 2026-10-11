@@ -40,3 +40,20 @@ In the `articles` folder:
 - `index.csv`: list of articles (opens in Excel)
 - `pdf_links.txt`: links to PDF documents found on the site (strategies,
   reports), to download by hand
+
+## Rank the articles like the exam jury
+
+After scraping, run:
+
+```
+python rank.py
+python rank.py --folder eau --top 20
+```
+
+Each article gets a score based on the traits of the 2025 exam text (which was
+copied word for word from an official policy page): 300 to 600 words, at least
+5 paragraphs, reference to the King's guidance, strategy and governance
+vocabulary, a law reference, logical connectors, few figures, and no event-news
+tone (visits, inaugurations, meetings). The 2025 exam text itself scores 22 out
+of 23. The best articles are printed first, and the full list is saved to
+`ranking.csv` in the same folder.
